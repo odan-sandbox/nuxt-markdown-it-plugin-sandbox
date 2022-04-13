@@ -1,3 +1,5 @@
+import path from 'path'
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -30,7 +32,15 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['@nuxtjs/markdownit'],
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    use: ['markdown-it-table-of-contents'],
+    // here
+    runtime: true,
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
